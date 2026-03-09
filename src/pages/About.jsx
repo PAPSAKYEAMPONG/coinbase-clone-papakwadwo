@@ -15,7 +15,7 @@ import paulImg from '../assets/aboutPage/PAUL_GREWAL_01.avif';
 import gregoryImg from '../assets/aboutPage/GREG_TUSAR_01.avif';
 import maxImg from '../assets/aboutPage/MAX_BRANZBURG_01.avif';
 import jesseImg from '../assets/aboutPage/Jesse_Pollak.avif';
-import robImg from '../assets/aboutPage/Rob_Witoff.avif';
+import robImg from '../assets/aboutPage/rob_witoff.avif';
 
 const stats = [
     { label: 'ANNUAL TRADING VOLUME*', value: '$1.2T' },
