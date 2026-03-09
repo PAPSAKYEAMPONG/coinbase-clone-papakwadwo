@@ -1,20 +1,20 @@
 import React, { useRef, useState } from 'react';
-import advancedHeroImg from '../assets/advancedpage/advanced_hero.png';
-import spotPairsIcon from '../assets/advancedpage/advancedTradingRebates-3.svg'; // Using this for toggles for now
-import lowFeesIcon from '../assets/advancedpage/lowFees-4.svg';
-import derivativesIcon from '../assets/advancedpage/derivativesNavigation-6.svg';
-import rewardsIcon from '../assets/advancedpage/rewardsNavigation-5.svg';
-import assetsIcon from '../assets/advancedpage/stableCoinMetaphor-4.svg'; // Using this for scales
-import securityIcon from '../assets/advancedpage/securityCoinShield-5.svg';
-import cbLockIllo from '../assets/advancedpage/Line16_MockUp_v01_resized_2000w.webp';
-import lineMockup from '../assets/advancedpage/Line17_MockUp_v01.webp';
-import blueLock from '../assets/advancedpage/CBR_LOLP_lockIllo_v01_1.webp';
-import tradingEdgeMockup from '../assets/advancedpage/Static_3.webp';
-import speedControlMockup from '../assets/advancedpage/Line16_MockUp_v01_resized_2000w.webp';
-import cb1Logo from '../assets/advancedpage/cb1-logo.svg';
-import learnTechAnalysis from '../assets/advancedpage/Learn_Illustration_What_is_Technical_Analysis.webp';
-import learnCharts from '../assets/advancedpage/how_to_read_advanced-trading_charts.webp';
-import learnOrders from '../assets/advancedpage/limit-orders__1.webp';
+import advancedHeroImg from '../assets/AdvancedPage/advanced_hero.png';
+import spotPairsIcon from '../assets/AdvancedPage/advancedTradingRebates-3.svg'; // Using this for toggles for now
+import lowFeesIcon from '../assets/AdvancedPage/lowFees-4.svg';
+import derivativesIcon from '../assets/AdvancedPage/derivativesNavigation-6.svg';
+import rewardsIcon from '../assets/AdvancedPage/rewardsNavigation-5.svg';
+import assetsIcon from '../assets/AdvancedPage/stableCoinMetaphor-4.svg'; // Using this for scales
+import securityIcon from '../assets/AdvancedPage/securityCoinShield-5.svg';
+import cbLockIllo from '../assets/AdvancedPage/Line16_MockUp_v01_resized_2000w.webp';
+import lineMockup from '../assets/AdvancedPage/Line17_MockUp_v01.webp';
+import blueLock from '../assets/AdvancedPage/CBR_LOLP_lockIllo_v01_1.webp';
+import tradingEdgeMockup from '../assets/AdvancedPage/Static_3.webp';
+import speedControlMockup from '../assets/AdvancedPage/Line16_MockUp_v01_resized_2000w.webp';
+import cb1Logo from '../assets/AdvancedPage/cb1-logo.svg';
+import learnTechAnalysis from '../assets/AdvancedPage/Learn_Illustration_What_is_Technical_Analysis.webp';
+import learnCharts from '../assets/AdvancedPage/how_to_read_advanced-trading_charts.webp';
+import learnOrders from '../assets/AdvancedPage/limit-orders__1.webp';
 
 export default function AdvancedTrade() {
     const carouselRef = useRef(null);
