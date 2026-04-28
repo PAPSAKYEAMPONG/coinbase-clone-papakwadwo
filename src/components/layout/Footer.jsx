@@ -176,6 +176,14 @@ export default function Footer() {
                         <span>English</span>
                     </div>
                 </div>
+                {/* Disclaimer */}
+                <div className="mt-12 pt-8 border-t border-[#e5e7eb]">
+                    <p className="text-[#5b616e] text-[13px] leading-relaxed text-center italic">
+                        ⚠️ Disclaimer: This website is a demo project created for educational purposes. It is not a real cryptocurrency platform. 
+                        Please do not enter any real personal information, banking details, or passwords. 
+                        All data entered is for simulation only and is not stored or processed by any real financial institution.
+                    </p>
+                </div>
 
             </div>
         </footer>

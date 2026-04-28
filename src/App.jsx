@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import WarningBanner from './components/common/WarningBanner';
 import Home from './pages/Home';
 import Explore from './pages/Explore';
 import AssetDetail from './pages/AssetDetail';
@@ -42,6 +43,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans flex flex-col overflow-x-hidden">
+      <WarningBanner />
       {!hideNavFooter && <Navbar />}
       <main className="flex-grow flex flex-col">
         <Routes>

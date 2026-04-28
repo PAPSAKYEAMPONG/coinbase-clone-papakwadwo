@@ -17,9 +17,12 @@ export default function SignIn() {
             {/* Form Container */}
             <div className="flex-grow flex flex-col items-center justify-center -mt-10">
                 <div className="w-full max-w-[400px]">
-                    <h1 className="text-[32px] font-medium tracking-tight mb-8 text-center">
+                    <h1 className="text-[32px] font-medium tracking-tight mb-2 text-center">
                         Sign in to Coinbase
                     </h1>
+                    <p className="text-[#FFB119] text-[14px] font-medium text-center mb-8">
+                        ⚠️ Demo app – DO NOT use your real password
+                    </p>
 
                     <form className="flex flex-col gap-6 w-full">
                         <div className="flex flex-col gap-2">
