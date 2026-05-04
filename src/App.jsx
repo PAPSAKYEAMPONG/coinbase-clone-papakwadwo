@@ -9,6 +9,7 @@ import AssetDetail from './pages/AssetDetail';
 import Learn from './pages/Learn';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import Profile from './pages/Profile';
 import CoinbaseOne from './pages/CoinbaseOne';
 import PrivateClient from './pages/PrivateClient';
 import AdvancedTrade from './pages/AdvancedTrade';
@@ -54,6 +55,7 @@ function App() {
           <Route path="/earn" element={<Earn />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/one" element={<CoinbaseOne />} />
           <Route path="/private-client" element={<PrivateClient />} />
           <Route path="/advanced-trade" element={<AdvancedTrade />} />

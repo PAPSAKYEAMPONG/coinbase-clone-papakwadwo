@@ -1,10 +1,44 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FiUsers, FiMail } from 'react-icons/fi';
 import { FaGoogle, FaApple } from 'react-icons/fa';
 import logo from '../assets/coinbaseLogoNavigation-4.svg';
 
 export default function SignIn() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+        setLoading(true);
+
+        try {
+            const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+            const res = await fetch(`${API_URL}/api/auth/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password }),
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                // Login successful
+                navigate('/');
+            } else {
+                setError(data.message || 'Login failed');
+            }
+        } catch (err) {
+            setError('Server error. Please try again later.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-[#000000] text-white font-sans flex flex-col p-6">
             {/* Header / Logo */}
@@ -24,18 +58,38 @@ export default function SignIn() {
                         ⚠️ Demo app – DO NOT use your real password
                     </p>
 
-                    <form className="flex flex-col gap-6 w-full">
+                    {error && <p className="text-red-500 mb-4 text-sm text-center">{error}</p>}
+
+                    <form className="flex flex-col gap-6 w-full" onSubmit={handleSubmit}>
                         <div className="flex flex-col gap-2">
                             <label className="text-[14px] font-medium text-white/90">Email</label>
                             <input
                                 type="email"
                                 placeholder="Your email address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
                                 className="w-full bg-transparent border border-white/20 rounded-[8px] p-4 text-[16px] focus:outline-none focus:border-[#0052FF] transition-colors placeholder:text-white/40"
                             />
                         </div>
 
-                        <button className="w-full bg-[#1a2b4b] text-white/50 py-4 rounded-full font-bold text-[16px] cursor-not-allowed">
-                            Continue
+                        <div className="flex flex-col gap-2">
+                            <label className="text-[14px] font-medium text-white/90">Password</label>
+                            <input
+                                type="password"
+                                placeholder="Your password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                                className="w-full bg-transparent border border-white/20 rounded-[8px] p-4 text-[16px] focus:outline-none focus:border-[#0052FF] transition-colors placeholder:text-white/40"
+                            />
+                        </div>
+
+                        <button 
+                            disabled={loading || !email || !password}
+                            className="w-full bg-[#0052FF] hover:bg-[#0045D8] disabled:bg-[#1a2b4b] disabled:text-white/50 text-white py-4 rounded-full font-bold text-[16px] transition-colors"
+                        >
+                            {loading ? 'Signing In...' : 'Continue'}
                         </button>
                     </form>
 
